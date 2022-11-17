@@ -1,0 +1,46 @@
+﻿<Window x:Class="Agenda.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Agenda"
+        mc:Ignorable="d"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Agenda"  Height="600" Width="800" Loaded="Window_Loaded"
+        MinHeight="300" MinWidth="800" WindowStartupLocation="CenterScreen" ToolTip="Janela principal" Icon="agenda.png">
+    <!--determina o tamanho que pode aumentar e diminuir a janela e quando executada , abrir a janela no centro-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="385*"/>
+            <RowDefinition Height="199*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="49*"/>
+            <ColumnDefinition Width="287*"/>
+            <ColumnDefinition Width="465*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Label Content="ID" Background="Chartreuse"  ToolTip="Código Identificador" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="58" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtID" Margin="10,33,84,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" TextChanged="txtID_TextChanged" Height="27" Grid.ColumnSpan="2"/>
+        <Label Content="Nome" Background="Chartreuse"  HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="58" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtNome" Margin="10,93,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="27" Grid.ColumnSpan="3"/>
+        <Label Content="E-mail" Background="Chartreuse"  HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Width="58" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtEmail" Margin="10,153,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="27" Grid.ColumnSpan="3"/>
+        <Label Content="Telefone" Background="Chartreuse"  HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top" Width="58" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtTelefone" Margin="10,213,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="26" Grid.ColumnSpan="3"/>
+        <DataGrid x:Name="dgDados" IsReadOnly="true" HorizontalAlignment="Left" Margin="10,346,0,26" Width="761" Grid.ColumnSpan="3" MouseDoubleClick="dgDados_MouseDoubleClick" SelectionMode="Single" Grid.RowSpan="2"/>
+        <Button x:Name="btInserir" Content="Inserir"  HorizontalAlignment="Left" Margin="10,261,0,0" VerticalAlignment="Top" Height="31" Width="101" Click="btInserir_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="btAlterar" Content="Alterar" HorizontalAlignment="Left" Margin="67,261,0,0" VerticalAlignment="Top" Height="31" Width="102" Grid.Column="1" Click="btAlterar_Click"/>
+        <Button x:Name="btLocalizar" Content="Localizar" HorizontalAlignment="Left" Margin="174,261,0,0" VerticalAlignment="Top" Height="31" Width="102" Grid.Column="1" Click="btLocalizar_Click"/>
+        <Button x:Name="btExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="282,261,0,0" VerticalAlignment="Top" Height="31" Width="102" RenderTransformOrigin="0.948,0.949" Grid.Column="1" Click="btExcluir_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="btSalvar" Content="Salvar" HorizontalAlignment="Left" Margin="107,261,0,0" VerticalAlignment="Top" Height="31" Width="102" RenderTransformOrigin="0.948,0.949" Click="btSalvar_Click" Grid.Column="2"/>
+        <Button x:Name="btCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="214,261,0,0" VerticalAlignment="Top" Height="31" Width="102" RenderTransformOrigin="0.948,0.949" Grid.Column="2" Click="btCancelar_Click"/>
+        <Label x:Name="lbQtdContatos" Content="Label" HorizontalAlignment="Left" Margin="0,324,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.649,0.425" Grid.ColumnSpan="2" Width="213"/>
+    </Grid>
+</Window>
